@@ -58,9 +58,9 @@ void  PyInterpreter::NewVarCallback(const pangolin::VarState::Event& e)
 PyInterpreter::PyInterpreter()
 {
     using namespace py_pangolin;
-    auto pypangolin = py::module_::import("pypangolin");
+    auto pypangolin = py::module::import("pypangolin");
     
-    auto sys = py::module_::import("sys");
+    auto sys = py::module::import("sys");
     if(sys) {
         // TODO: What is the lifetime of PyPangoIO?
         PyPangoIO* wrap_stdout = new PyPangoIO(line_queue, ConsoleLineTypeStdout);
